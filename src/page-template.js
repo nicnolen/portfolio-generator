@@ -1,6 +1,6 @@
 // Use template literals to insert JavaScript expressions into a string through interpoliation (substitution of text for a variable we build into the html ($(variable)))
 const generatePage = (name, github) => {
-  return `
+    return `
       <!DOCTYPE html> 
       <html lang="en"> 
       <head>
@@ -16,7 +16,7 @@ const generatePage = (name, github) => {
       </body>
       </html>
       `;
-};
+  };
 
-// allow the app.js file to use the generatePage() function
-module.exports = generatePage;
+  // allow the app.js file to use the generatePage() function
+  module.exports = generatePage;
