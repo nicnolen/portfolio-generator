@@ -1,18 +1,17 @@
+// Define the file system (fs)
+const fs = require('fs');
+// Recieve the generatePage function from the page-template function
+const generatePage = require('./src/page-template.js');
+
 // Create a variable that cant be reassigned (const) and make a new array (slice) from the 3rd element (2nd index) up to but not including argv.length (up to the last array)
-const profileDataArgs = process.argv.slice(2, process.argv.length);
-console.log(profileDataArgs);
+const profileDataArgs = process.argv.slice(2);
 
-// Print each command line argument one by one
-const printProfileData = (profileDataArr) => {
-  // this for loop is....
-  for (let i = 0; i < profileDataArr.length; i++) {
-    console.log(profileDataArr[i]);
-  }
-  // equal sign to divide the 2 statements
-  console.log('================');
+// Extract the command line arguments and store them in distinct variables using assignment destrucuring
+const [name, github] = profileDataArgs;
 
-  // is the same as this....
-  profileDataArr.forEach((profileItem) => console.log(profileItem));
-};
+// Create an HTML file. In write file the arguments are ('file name', data, callbackFunction)
+fs.writeFile('./index.html', generatePage(name, github), (err) => {
+  if (err) throw new Error(err);
 
-printProfileData(profileDataArgs);
+  console.log('Portfolio complete! Check out index.html to see the output!');
+});
