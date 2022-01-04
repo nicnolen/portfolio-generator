@@ -1,16 +1,30 @@
 // Use the require() function to include inquirer in the app.js file
 const inquirer = require('inquirer');
-inquirer
-  // pass questions
-  .prompt([
+
+// Wrap the question prompt as a function
+const promptUser = () => {
+  return inquirer.prompt([
+    // pass questions
     {
       type: 'input',
       name: 'name',
       message: 'What is your name?',
     },
-  ])
-  // use the user feedback
-  .then((answers) => console.log(answers));
+    {
+      type: 'input',
+      name: 'github',
+      message: 'Enter your GitHub Username',
+    },
+    {
+      type: 'input',
+      name: 'about',
+      message: 'Provide some information about yourself:',
+    },
+  ]);
+};
+// use the user feedback
+promptUser().then((answers) => console.log(answers));
+
 // // Define the file system (fs)
 // const fs = require('fs');
 // // Recieve the generatePage function from the page-template function
