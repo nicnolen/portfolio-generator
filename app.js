@@ -8,12 +8,29 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'name',
-      message: 'What is your name?',
+      message: 'What is your name? (Required)',
+      // validate that the user hasnt left the name blank
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('Please enter your name!');
+          return false;
+        }
+      },
     },
     {
       type: 'input',
       name: 'github',
-      message: 'Enter your GitHub Username',
+      message: 'Enter your GitHub Username (Required)',
+      // validate that the user hasnt left the github username blank
+      validate: (githubInput) => {
+        if (githubInput) {
+          return true;
+        } else {
+          console.log('Please enter a valid GitHub username!');
+        }
+      },
     },
     {
       type: 'input',
@@ -39,12 +56,28 @@ const promptProject = (portfolioData) => {
       {
         type: 'input',
         name: 'name',
-        message: 'What is the name of your project?',
+        message: 'What is the name of your project? (Required)',
+        // validate that the user hasnt left the github username blank
+        validate: (projectName) => {
+          if (projectName) {
+            return true;
+          } else {
+            console.log('Please enter a valid project name!');
+          }
+        },
       },
       {
         type: 'input',
         name: 'description',
         message: 'Provide a description of the project (Required)',
+        // validate that the user hasnt left the github username blank
+        validate: (projectDescription) => {
+          if (projectDescription) {
+            return true;
+          } else {
+            console.log('Please enter a valid project description!');
+          }
+        },
       },
       {
         type: 'checkbox',
@@ -64,6 +97,14 @@ const promptProject = (portfolioData) => {
         type: 'input',
         name: 'link',
         message: 'Enter the GitHub link to your project. (Required)',
+        // validate that the user hasnt left the github username blank
+        validate: (githubLink) => {
+          if (githubLink) {
+            return true;
+          } else {
+            console.log('Please enter a valid GitHub link!');
+          }
+        },
       },
       {
         type: 'confirm',
