@@ -1,7 +1,7 @@
 // Use the require() function to include inquirer in the app.js file
 const inquirer = require('inquirer');
 
-// Wrap the question prompt as a function
+/* Profile Questions */
 const promptUser = () => {
   return inquirer.prompt([
     // pass questions
@@ -22,8 +22,79 @@ const promptUser = () => {
     },
   ]);
 };
+
+/* Project questions */
+const promptProject = (portfolioData) => {
+  // If there's no 'projects' array property, create one
+  if (!portfolioData.projects) {
+    portfolioData.projects = [];
+  }
+  console.log(`
+  =================
+  Add a New Project
+  =================
+  `);
+  return inquirer
+    .prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is the name of your project?',
+      },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'Provide a description of the project (Required)',
+      },
+      {
+        type: 'checkbox',
+        name: 'languages',
+        message: 'What did you build this project with? (Check all that apply)',
+        choices: [
+          'JavaScript',
+          'HTML',
+          'CSS',
+          'ES6',
+          'jQuery',
+          'Bootstrap',
+          'Node',
+        ],
+      },
+      {
+        type: 'input',
+        name: 'link',
+        message: 'Enter the GitHub link to your project. (Required)',
+      },
+      {
+        type: 'confirm',
+        name: 'feature',
+        message: 'Would you like to feature this project?',
+        default: false,
+      },
+      {
+        type: 'confirm',
+        name: 'confirmAddProject',
+        message: 'Would you like to enter another project',
+        default: false,
+      },
+    ])
+    .then((projectData) => {
+      portfolioData.projects.push(projectData);
+      // Call the promptProject(portfolioData) function when confirmAddProject evaluates to true
+      if (projectData.confirmAddProject) {
+        return promptProject(portfolioData);
+      } else {
+        return portfolioData;
+      }
+    });
+};
+
 // use the user feedback
-promptUser().then((answers) => console.log(answers));
+promptUser()
+  .then(promptProject)
+  .then((portfolioData) => {
+    console.log(portfolioData);
+  });
 
 // // Define the file system (fs)
 // const fs = require('fs');
