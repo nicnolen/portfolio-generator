@@ -1,5 +1,9 @@
+// Define the file system (fs)
+const fs = require('fs');
 // Use the require() function to include inquirer in the app.js file
 const inquirer = require('inquirer');
+// Recieve the generatePage function from the page-template function
+const generatePage = require('./src/page-template.js');
 
 /* Profile Questions */
 const promptUser = () => {
@@ -148,13 +152,12 @@ const promptProject = (portfolioData) => {
 promptUser()
   .then(promptProject)
   .then((portfolioData) => {
-    console.log(portfolioData);
-  });
+    const pageHTML = generatePage(portfolioData);
 
-// // Define the file system (fs)
-// const fs = require('fs');
-// // Recieve the generatePage function from the page-template function
-// const generatePage = require('./src/page-template.js');
+    // fs.writeFile('./index.html', pageHTML, err => {
+    //   if (err) throw new Error(err);
+    // });
+  });
 
 // // Variable to store the generatePage function with arguments
 // const pageHTML = generatePage(name, github);
