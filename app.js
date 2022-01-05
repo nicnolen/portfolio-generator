@@ -1,9 +1,9 @@
-// Define the file system (fs)
-const fs = require('fs');
 // Use the require() function to include inquirer in the app.js file
 const inquirer = require('inquirer');
 // Recieve the generatePage function from the page-template function
-const generatePage = require('./src/page-template.js');
+const generatePage = require('./src/page-template');
+// include generate-site in the app
+const { writeFile, copyFile } = require('./utils/generate-site');
 
 /* Profile Questions */
 const promptUser = () => {
@@ -167,4 +167,3 @@ promptUser()
   .catch(err => {
     console.log(err);
   });
-   
