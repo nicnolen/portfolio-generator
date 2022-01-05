@@ -14,7 +14,7 @@ const promptUser = () => {
       name: 'name',
       message: 'What is your name? (Required)',
       // validate that the user hasnt left the name blank
-      validate: (nameInput) => {
+      validate: nameInput => {
         if (nameInput) {
           return true;
         } else {
@@ -28,7 +28,7 @@ const promptUser = () => {
       name: 'github',
       message: 'Enter your GitHub Username (Required)',
       // validate that the user hasnt left the github username blank
-      validate: (githubInput) => {
+      validate: githubInput => {
         if (githubInput) {
           return true;
         } else {
@@ -59,7 +59,7 @@ const promptUser = () => {
 };
 
 /* Project questions */
-const promptProject = (portfolioData) => {
+const promptProject = portfolioData => {
   // If there's no 'projects' array property, create one
   if (!portfolioData.projects) {
     portfolioData.projects = [];
@@ -76,7 +76,7 @@ const promptProject = (portfolioData) => {
         name: 'name',
         message: 'What is the name of your project? (Required)',
         // validate that the user hasnt left the github username blank
-        validate: (projectName) => {
+        validate: projectName => {
           if (projectName) {
             return true;
           } else {
@@ -89,7 +89,7 @@ const promptProject = (portfolioData) => {
         name: 'description',
         message: 'Provide a description of the project (Required)',
         // validate that the user hasnt left the github username blank
-        validate: (projectDescription) => {
+        validate: projectDescription => {
           if (projectDescription) {
             return true;
           } else {
@@ -116,7 +116,7 @@ const promptProject = (portfolioData) => {
         name: 'link',
         message: 'Enter the GitHub link to your project. (Required)',
         // validate that the user hasnt left the github username blank
-        validate: (githubLink) => {
+        validate: githubLink => {
           if (githubLink) {
             return true;
           } else {
@@ -137,7 +137,7 @@ const promptProject = (portfolioData) => {
         default: false,
       },
     ])
-    .then((projectData) => {
+    .then(projectData => {
       portfolioData.projects.push(projectData);
       // Call the promptProject(portfolioData) function when confirmAddProject evaluates to true
       if (projectData.confirmAddProject) {
@@ -151,10 +151,10 @@ const promptProject = (portfolioData) => {
 // use the user feedback
 promptUser()
   .then(promptProject)
-  .then((portfolioData) => {
+  .then(portfolioData => {
     const pageHTML = generatePage(portfolioData);
     // write the html file
-    fs.writeFile('./index.html', pageHTML, (err) => {
+    fs.writeFile('./index.html', pageHTML, err => {
       if (err) throw new Error(err);
     });
   });
