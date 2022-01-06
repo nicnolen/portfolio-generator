@@ -1,68 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Portfolio Demo</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
+      <!DOCTYPE html> 
+      <html lang="en"> 
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Portfolio Demo</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+      </head>
+    
+      <body>
     <header>
       <div class="container flex-row justify-space-between align-center py-3">
-        <h1 class="page-title text-secondary bg-dark py-2 px-3">Nic</h1>
+        <h1 class="page-title text-secondary bg-dark py-2 px-3">Nicholas Nolen</h1>
         <nav class="flex-row">
-          <a
-            class="ml-2 my-1 px-2 py-1 bg-secondary text-dark"
-            href="https://github.com/nicnolen"
-            >GitHub</a
-          >
+          <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/nicnolen">GitHub</a>
         </nav>
       </div>
     </header>
     <main class="container my-5">
-      <section class="my-3" id="about">
-        <h2 class="text-dark bg-primary p-2 display-inline-block">About Me</h2>
-        <p>I like to code</p>
-      </section>
-
-      <section class="my-3" id="portfolio">
-        <h2 class="text-dark bg-primary p-2 display-inline-block">Work</h2>
-        <div class="flex-row justify-space-between">
+      
+    <section class="my-3" id="about">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">About Me</h2>
+      <p>Full-stack web developer leveraging a business background to build sites oriented towards user engagement. Earned a certificate in full-stack web development from the University of Texas at Austin’s Web Development Boot Camp with newly developed skills in HTML, CSS, JavaScript, and React.js. Known as an innovative problem solver passionate about developing apps, with a focus on mobile-first design and user accessibility. With each project, my aim is to make a site that is easy to use and fully engages my audiences for an impactful user experience. I applied aspects of front-end development in a recent project. I worked on a team of six to develop a single-page website that helps users easily search for actor information, movies, or television shows. I’m excited to leverage my skills as part of a fast-paced, quality-driven team to build better experiences on the web.</p>
+    </section>
+  
+      
+    <section class="my-3" id="portfolio">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">Work</h2>
+      <div class="flex-row justify-space-between">
+      
           <div class="col-12 mb-2 bg-dark text-light p-3">
-            <h3 class="portfolio-item-title text-light">taskinator</h3>
+            <h3 class="portfolio-item-title text-light">Watchopedia</h3>
             <h5 class="portfolio-languages">
-              Built With: JavaScript, HTML, CSS, ES6, jQuery, Bootstrap, Node
+              Built With:
+              JavaScript, HTML, CSS
             </h5>
-            <p>cool tasks</p>
-            <a href="github/taskinator" class="btn"
-              ><i class="fab fa-github mr-2"></i>View Project on GitHub</a
-            >
+            <p>I am a movie & tv show lover but I do not know what I want to watch. I open watchopedia and search by (actor, tv show, or movie). The website populates results of the search. I can save some of those titles to favorites.</p>
+            <a href="https://github.com/felipezintzun/watchopedia" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
           </div>
+        
+          <div class="col-12 mb-2 bg-dark text-light p-3">
+            <h3 class="portfolio-item-title text-light">Weather Dashboard</h3>
+            <h5 class="portfolio-languages">
+              Built With:
+              JavaScript, HTML, CSS, Bootstrap
+            </h5>
+            <p>Created a weather dashboard that dynamically displays the weather outlook for multiple cities. On the left side of the page is a form where a user can input a city. When a user inputs a city, a button with that city's name will be created so that the user can easily go back to a previous city. On the right side of the page, the current weather is displayed at the top and a five day forecast is displayed at the bottom. The UV index is color coded based on the severity level.</p>
+            <a href="https://github.com/nicnolen/weather-dashboard" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
+          </div>
+        
 
+      
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
-            <h3 class="portfolio-item-title text-light">run buddy</h3>
-            <h5 class="portfolio-languages">Built With: HTML, CSS</h5>
-            <p>cool buddy</p>
-            <a href="github/run-buddy" class="btn mt-auto"
-              ><i class="fab fa-github mr-2"></i>View Project on GitHub</a
-            >
+            <h3 class="portfolio-item-title text-light">Taskmaster Pro</h3>
+            <h5 class="portfolio-languages">
+              Built With:
+              JavaScript, HTML, CSS, jQuery, Bootstrap
+            </h5>
+            <p>Created a way to add tasks to a to do list and track their status.</p>
+            <a href="https://github.com/nicnolen/taskmaster-pro" class="btn mt-auto"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
           </div>
-        </div>
-      </section>
+        
+          <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
+            <h3 class="portfolio-item-title text-light">Work Scheduler</h3>
+            <h5 class="portfolio-languages">
+              Built With:
+              JavaScript, HTML, CSS, jQuery, Bootstrap
+            </h5>
+            <p>Created a schedule for workday hours (between 9 AM and 5pm) that allows users to input a task in a time slot. Time slots in the past are listed in gray, the current time slot is listed in red, and future time slots are listed in green. This makes it easy for users to know what times they are available, as well as visualize which task deadlines are approaching and prioritize those tasks</p>
+            <a href="https://github.com/nicnolen/work-scheduler" class="btn mt-auto"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
+          </div>
+        
+          <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
+            <h3 class="portfolio-item-title text-light">https://github.com/nicnolen/CodeQuiz</h3>
+            <h5 class="portfolio-languages">
+              Built With:
+              JavaScript, HTML, CSS
+            </h5>
+            <p>Created a short 5 question coding quiz that starts at 60 seconds and counts down. For every question you get right, you get 1 point added to your final score, and for every question you get wrong, 2 seconds are subtracted from your time.</p>
+            <a href="https://github.com/nicnolen/CodeQuiz" class="btn mt-auto"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
+          </div>
+        
+          <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
+            <h3 class="portfolio-item-title text-light">Git It Done</h3>
+            <h5 class="portfolio-languages">
+              Built With:
+              JavaScript, HTML, CSS, jQuery, Bootstrap
+            </h5>
+            <p>Made a web app that will search GitHub for open source projects with open issues and pull requests</p>
+            <a href="https://github.com/nicnolen/git-it-done" class="btn mt-auto"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
+          </div>
+        
+      </div>
+    </section>
+  
     </main>
     <footer class="container text-center py-3">
-      <h3 class="text-dark">&copy; 2022 by Nic</h3>
+      <h3 class="text-dark">&copy; 2022 by Nicholas Nolen</h3>
     </footer>
   </body>
-</html>
+  </html>
+  

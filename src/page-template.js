@@ -71,7 +71,7 @@ module.exports = templateData => {
         <title>Portfolio Demo</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
-        <linl rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
       </head>
     
       <body>
